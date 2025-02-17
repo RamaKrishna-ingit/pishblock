@@ -26,8 +26,9 @@ chrome.webRequest.onBeforeRequest.addListener(function(details) {
         showBlockedNotification(details.url);
         return { cancel: true };  // Block the request
     } else {
+        console.log('site is safe')
         // Show notification for safe site
-        showSafeSiteNotification(details.url);
+        // showSafeSiteNotification(details.url);
     }
 }, { urls: ["<all_urls>"] }); // This listens to **all URLs**
 
